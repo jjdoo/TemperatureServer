@@ -1,0 +1,27 @@
+<h1>Listing introduces</h1>
+<table>
+    <tr>
+        <th>
+            Title
+        </th>
+        <th>
+            Description
+        </th>
+    </tr>
+    <% @intro.each do |article| %>
+    <tr>
+        <td>
+            <%=h article.title %>
+        </td>
+        <td>
+            <%=h article.description %>
+        </td>
+        <td>
+            <%=h Article::TYPES.find{|obj| obj[1]==article.article_type}[0] %>
+        </td>
+        <td>
+            <%=h article.avg_mark%>
+        </td>
+    </tr>
+    <% end %>
+</table>

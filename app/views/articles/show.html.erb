@@ -1,0 +1,18 @@
+<p>
+  <b>Title:</b>
+  <%=h @article.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @article.description %>
+</p>
+
+<p>
+	<b>Type:</b>
+	<td><%=h Article::TYPES.find{|obj| obj[1]==@article.article_type}[0]%></td>
+</p>
+
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>
